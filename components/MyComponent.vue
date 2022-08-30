@@ -1,13 +1,10 @@
 <script setup lang="ts">
 const CONSTANT = "これは定数です";
 
-// let counter = ref(1);
-const counter = useState("counter", () => 1);
-
+const counter = ref(1);
+// const counter = useState("counter", () => 1);
 const increment = () => counter.value++;
 
-// NOTE: 型定義の利用は Interface しか利用できなさそう
-// type Props = BaseProps;
 interface Props {
   message?: string;
   labels?: () => string[];
@@ -16,6 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
   message: "hello",
   labels: () => ["one", "two"],
   isFoo: true,
+  isBar: true,
 });
 </script>
 
