@@ -6,40 +6,16 @@ const counter = useState("counter", () => 1);
 
 const increment = () => counter.value++;
 
-type BaseProps = {
-  message?: string;
-  labels?: () => string[];
-};
 // NOTE: 型定義の利用は Interface しか利用できなさそう
-type Props = {
+// type Props = BaseProps;
+interface Props {
   message?: string;
   labels?: () => string[];
-};
-
-interface MyComponentIsFooProps extends BaseProps {
-  isFoo: true;
-  foo: string;
 }
-interface MyComponentIsNotFooProps extends BaseProps {
-  isFoo: false;
-}
-
-interface MyComponentProps extends BaseProps {
-  Args: {
-    Props:
-      | {
-          isFoo: true;
-          foo: string;
-        }
-      | {
-          isFoo: false;
-        };
-  };
-}
-
 const props = withDefaults(defineProps<Props>(), {
   message: "hello",
   labels: () => ["one", "two"],
+  isFoo: true,
 });
 </script>
 

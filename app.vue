@@ -11,7 +11,7 @@
 
   <p>ddd</p>
 
-  <MyComponent />
+  <MyComponent isFoo="{true}" />
 
   <p>eee</p>
 </template>
