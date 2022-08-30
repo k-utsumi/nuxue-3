@@ -1,3 +1,7 @@
+<script setup lang="ts">
+//
+</script>
+
 <template>
   <Head>
     <Title>aaa</Title>
@@ -11,7 +15,8 @@
 
   <p>ddd</p>
 
-  <MyComponent isFoo="{true}" />
+  <MyComponent :isFoo="true" />
+  <FooMyComponent :isFoo="true" />
 
   <p>eee</p>
 </template>
